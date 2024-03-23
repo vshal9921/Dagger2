@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -54,7 +54,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.google.dagger)
-    kapt(libs.dagger.compiler)
+    ksp(libs.dagger.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
