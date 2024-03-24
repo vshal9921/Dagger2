@@ -1,13 +1,12 @@
 package com.example.dagger2
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
 @Module
-class UserRepositoryModule {
+abstract class UserRepositoryModule {
 
-    @Provides
-    fun getDbRepository(dbRepository: DbRepository) : UserRepository {
-        return dbRepository
-    }
+    @Binds
+    abstract fun getDbRepository(dbRepository: DbRepository) : UserRepository
 }
