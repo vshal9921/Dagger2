@@ -5,7 +5,7 @@ import dagger.Provides
 import javax.inject.Named
 
 @Module
-class NotificationServiceModule {
+class NotificationServiceModule() {
 
     @Named("email")
     @Provides
@@ -15,7 +15,7 @@ class NotificationServiceModule {
 
     @MessageAnnotation
     @Provides
-    fun getMessageService() : NotificationService{
-        return MessageService()
+    fun getMessageService(retryCount : Int) : NotificationService{
+        return MessageService(retryCount)
     }
 }

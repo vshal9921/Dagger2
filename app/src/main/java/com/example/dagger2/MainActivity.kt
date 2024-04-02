@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         // getting component from dagger
-        val component = DaggerUserRegistrationComponent.builder().build();
+        val component = DaggerUserRegistrationComponent.factory().create(3)
 
         // getting objects of class required through dagger
         component.inject(this)
